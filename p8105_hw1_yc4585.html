@@ -358,23 +358,15 @@ display: none;
 <div id="load-dataset" class="section level2">
 <h2>Load dataset</h2>
 <pre class="r"><code>  data(&quot;penguins&quot;, package = &quot;palmerpenguins&quot;)
-  str(penguins)</code></pre>
-<pre><code>## tibble [344 × 8] (S3: tbl_df/tbl/data.frame)
-##  $ species          : Factor w/ 3 levels &quot;Adelie&quot;,&quot;Chinstrap&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
-##  $ island           : Factor w/ 3 levels &quot;Biscoe&quot;,&quot;Dream&quot;,..: 3 3 3 3 3 3 3 3 3 3 ...
-##  $ bill_length_mm   : num [1:344] 39.1 39.5 40.3 NA 36.7 39.3 38.9 39.2 34.1 42 ...
-##  $ bill_depth_mm    : num [1:344] 18.7 17.4 18 NA 19.3 20.6 17.8 19.6 18.1 20.2 ...
-##  $ flipper_length_mm: int [1:344] 181 186 195 NA 193 190 181 195 193 190 ...
-##  $ body_mass_g      : int [1:344] 3750 3800 3250 NA 3450 3650 3625 4675 3475 4250 ...
-##  $ sex              : Factor w/ 2 levels &quot;female&quot;,&quot;male&quot;: 2 1 1 NA 1 2 1 2 NA NA ...
-##  $ year             : int [1:344] 2007 2007 2007 2007 2007 2007 2007 2007 2007 2007 ...</code></pre>
-<pre class="r"><code>  nrow(penguins)</code></pre>
-<pre><code>## [1] 344</code></pre>
-<pre class="r"><code>  ncol(penguins)</code></pre>
-<pre><code>## [1] 8</code></pre>
-<pre class="r"><code>  number_mean = mean(penguins$flipper_length_mm, na.rm = TRUE)
-  number_mean</code></pre>
-<pre><code>## [1] 200.9152</code></pre>
+  str(penguins)
+  nrow(penguins)
+  ncol(penguins)
+  number_mean = mean(penguins$flipper_length_mm, na.rm = TRUE)</code></pre>
+<p>The the main variables in the dataset include species,island,
+bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex and
+year.</p>
+<p>The dataset have 344 rows and 8 columns, the mean of flipper length
+is 200.9152047.</p>
 </div>
 <div id="including-plots" class="section level2">
 <h2>Including Plots</h2>

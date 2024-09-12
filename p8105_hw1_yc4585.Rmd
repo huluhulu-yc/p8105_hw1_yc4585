@@ -9,15 +9,19 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Load dataset
-```{r load data}
+```{r load data, results='hide'}
   data("penguins", package = "palmerpenguins")
   str(penguins)
   nrow(penguins)
   ncol(penguins)
   number_mean = mean(penguins$flipper_length_mm, na.rm = TRUE)
-  number_mean
+  
 ```
+        
+  The the main variables in the dataset include species,island, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex and year.
 
+
+  The dataset have `r nrow(penguins)` rows and `r ncol(penguins)` columns, the mean of flipper length is `r number_mean`.
 
 ## Including Plots
 
