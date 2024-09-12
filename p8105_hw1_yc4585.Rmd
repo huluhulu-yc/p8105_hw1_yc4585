@@ -64,7 +64,21 @@ ggsave(
 The code above show the required data frame.
 
 ```{r}
+Vec_Numeric = my_data %>% pull(vec_numeric)
+mean(Vec_Numeric)
+Vec_Logical = my_data %>% pull(vec_logical)
+mean(Vec_Logical)
+Vec_Character = my_data %>% pull(vec_character)
+mean(Vec_Character)
+Vec_Factor = my_data %>% pull(vec_factor)
+mean(Vec_Factor)
+```
+We can calculate the mean of numeric vector and logical vector, but we cannot calculate the mean of character vector and factor vector.
 
+```{r conver variable types,results='hide'}
+num_logical = as.numeric(Vec_Logical)
+num_character = as.numeric(Vec_Character)
+num_factor = as.numeric(Vec_Factor)
 ```
 
 

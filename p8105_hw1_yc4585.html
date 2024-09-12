@@ -406,17 +406,38 @@ ggplot(plot_data, aes(x=x, y=y, colour = penguins$species)) +
     vec_factor )
   print(my_data)</code></pre>
 <pre><code>##    vec_numeric vec_logical vec_character vec_factor
-## 1    0.8378825        TRUE                        A
-## 2   -0.1625027       FALSE                        A
-## 3    1.1183580        TRUE                        A
-## 4   -1.4372031       FALSE                        A
-## 5   -0.6269204       FALSE                        A
-## 6    0.2445782        TRUE                        A
-## 7    0.3999183        TRUE                        B
-## 8   -0.9206814       FALSE                        B
-## 9    0.3866550        TRUE                        C
-## 10   0.3761627        TRUE                        C</code></pre>
+## 1  -0.42978416       FALSE                        A
+## 2   0.14112201        TRUE                        A
+## 3  -0.09623608       FALSE                        A
+## 4  -1.19666854       FALSE                        A
+## 5   1.35618472        TRUE                        A
+## 6   1.94699913        TRUE                        A
+## 7  -1.03420796       FALSE                        B
+## 8  -0.55220538       FALSE                        B
+## 9   0.36876580        TRUE                        C
+## 10  0.51168752        TRUE                        C</code></pre>
 <p>The code above show the required data frame.</p>
+<pre class="r"><code>Vec_Numeric = my_data %&gt;% pull(vec_numeric)
+mean(Vec_Numeric)</code></pre>
+<pre><code>## [1] 0.1015657</code></pre>
+<pre class="r"><code>Vec_Logical = my_data %&gt;% pull(vec_logical)
+mean(Vec_Logical)</code></pre>
+<pre><code>## [1] 0.5</code></pre>
+<pre class="r"><code>Vec_Character = my_data %&gt;% pull(vec_character)
+mean(Vec_Character)</code></pre>
+<pre><code>## Warning in mean.default(Vec_Character): argument is not numeric or logical:
+## returning NA</code></pre>
+<pre><code>## [1] NA</code></pre>
+<pre class="r"><code>Vec_Factor = my_data %&gt;% pull(vec_factor)
+mean(Vec_Factor)</code></pre>
+<pre><code>## Warning in mean.default(Vec_Factor): argument is not numeric or logical:
+## returning NA</code></pre>
+<pre><code>## [1] NA</code></pre>
+<p>We can calculate the mean of numeric vector and logical vector, but
+we cannot calculate the mean of character vector and factor vector.</p>
+<pre class="r"><code>num_logical = as.numeric(Vec_Logical)
+num_character = as.numeric(Vec_Character)
+num_factor = as.numeric(Vec_Factor)</code></pre>
 </div>
 
 
