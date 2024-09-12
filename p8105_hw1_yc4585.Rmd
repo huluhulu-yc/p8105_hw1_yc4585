@@ -23,7 +23,27 @@ knitr::opts_chunk$set(echo = TRUE)
 
   The dataset have `r nrow(penguins)` rows and `r ncol(penguins)` columns, the mean of flipper length is `r number_mean`.
 
-## Including Plots
+## Make sactterplot
+```{r scatterplot, warning=FALSE}
+library(ggplot2)
+plot_data = data.frame(
+  x = penguins$bill_length_mm,
+  y = penguins$flipper_length_mm
+)
+
+ggplot(plot_data, aes(x=x, y=y, colour = penguins$species)) + 
+  geom_point() +
+  labs(x = "Bill Length (mm)", y = "Flipper Length (mm)")
+
+ggsave(
+  filename = "penguins.png", 
+  width = 7,                     
+  height = 7,                    
+  units = "in",                   
+  dpi = 600                      
+)
+```
+
 
 You can also embed plots, for example:
 
