@@ -7,8 +7,8 @@ date: "2024-09-12"
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
-## Load dataset
+## Problem 1
+### Load dataset
 ```{r load data, results='hide'}
   data("penguins", package = "palmerpenguins")
   str(penguins)
@@ -23,7 +23,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
   The dataset have `r nrow(penguins)` rows and `r ncol(penguins)` columns, the mean of flipper length is `r number_mean`.
 
-## Make sactterplot
+### Draw sactterplot
 ```{r scatterplot, warning=FALSE}
 library(ggplot2)
 plot_data = data.frame(
@@ -43,12 +43,29 @@ ggsave(
   dpi = 600                      
 )
 ```
-
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+## Problem 2
+```{r loading tidyverse, message=FALSE}
+  library(tidyverse)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r creat data frame}
+  vec_numeric = rnorm(10,0,1)
+  vec_logical = vec_numeric > 0
+  vec_character = vector("character", length = 10)
+  pre_factor = c("A", "A", "A", "A", "A", "A", "B", "B", "C", "C")
+  vec_factor = factor(pre_factor, levels = c("A", "B", "C"))
+  my_data = data.frame(
+    vec_numeric ,
+    vec_logical ,
+    vec_character ,
+    vec_factor )
+  print(my_data)
+```
+The code above show the required data frame.
+
+```{r}
+
+```
+
+
+
