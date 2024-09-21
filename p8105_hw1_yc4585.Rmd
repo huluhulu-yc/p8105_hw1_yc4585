@@ -51,7 +51,7 @@ ggsave(
 ```{r creat data frame}
   vec_numeric = rnorm(10,0,1)
   vec_logical = vec_numeric > 0
-  vec_character = vector("character", length = 10)
+  vec_character = c("my","name","is","yuhao","chang","I","like","playing","the","guitar")
   pre_factor = c("A", "A", "A", "A", "A", "A", "B", "B", "C", "C")
   vec_factor = factor(pre_factor, levels = c("A", "B", "C"))
   my_data = data.frame(
