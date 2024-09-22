@@ -18,7 +18,7 @@ knitr::opts_chunk$set(echo = TRUE)
   
 ```
         
-  The the main variables in the dataset include species,island, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex and year.
+  The the main variables in the dataset include species, island, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex and year.
 
 
   The dataset have `r nrow(penguins)` rows and `r ncol(penguins)` columns, the mean of flipper length is `r number_mean`.
@@ -44,6 +44,7 @@ ggsave(
 )
 ```
 ## Problem 2
+### Create data frame
 ```{r loading tidyverse, message=FALSE}
   library(tidyverse)
 ```
@@ -61,8 +62,9 @@ ggsave(
     vec_factor )
   print(my_data)
 ```
-The code above show the required data frame.
+The code above shows the required data frame.
 
+### Calculate the mean of each variable
 ```{r}
 Vec_Numeric = my_data %>% pull(vec_numeric)
 mean(Vec_Numeric)
@@ -73,8 +75,9 @@ mean(Vec_Character)
 Vec_Factor = my_data %>% pull(vec_factor)
 mean(Vec_Factor)
 ```
-We can calculate the mean of numeric vector and logical vector, when calculating the mean of logical vectors, TRUE is treated as 1 and FALSE is treated as 0. But we cannot calculate the mean of character vector and factor vector.
+We can calculate the mean of numeric variables and logical variables, when calculating the mean of logical variables, TRUE is treated as 1 and FALSE is treated as 0. But we cannot calculate the mean of character variables and factor variables.
 
+### Apply as.numeric function
 ```{r conver variable types,results='hide'}
 num_logical = as.numeric(Vec_Logical)
 num_character = as.numeric(Vec_Character)
@@ -82,7 +85,7 @@ num_factor = as.numeric(Vec_Factor)
 ```
 
 For logical variables, TRUE is converted to 1 and FALSE is converted to 0.
-For character variables,this conversion results in NA values, suggesting character strings cannot be directly converted to numbers.
+For character variables, this conversion results in NA values, suggesting character strings cannot be directly converted to numbers.
 For factor variables, the results can be converted to numbers and different levels of factors have different numbers.
 
 When we calculate the mean of variables, R can compute the mean for numeric and logical types directly. However, character and factor types require conversion. Even after conversion, we cannot calculate the mean of character types, as this results in NAs.
