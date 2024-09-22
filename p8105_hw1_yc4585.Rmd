@@ -73,13 +73,21 @@ mean(Vec_Character)
 Vec_Factor = my_data %>% pull(vec_factor)
 mean(Vec_Factor)
 ```
-We can calculate the mean of numeric vector and logical vector, but we cannot calculate the mean of character vector and factor vector.
+We can calculate the mean of numeric vector and logical vector, when calculating the mean of logical vectors, TRUE is treated as 1 and FALSE is treated as 0. But we cannot calculate the mean of character vector and factor vector.
 
 ```{r conver variable types,results='hide'}
 num_logical = as.numeric(Vec_Logical)
 num_character = as.numeric(Vec_Character)
 num_factor = as.numeric(Vec_Factor)
 ```
+
+For logical variables, TRUE is converted to 1 and FALSE is converted to 0.
+For character variables,this conversion results in NA values, suggesting character strings cannot be directly converted to numbers.
+For factor variables, the results can be converted to numbers and different levels of factors have different numbers.
+
+When we calculate the mean of variables, R can compute the mean for numeric and logical types directly. However, character and factor types require conversion. Even after conversion, we cannot calculate the mean of character types, as this results in NAs.
+
+
 
 
 
