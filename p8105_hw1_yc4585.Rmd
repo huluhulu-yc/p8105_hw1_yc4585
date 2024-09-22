@@ -78,7 +78,7 @@ mean(Vec_Factor)
 We can calculate the mean of numeric variables and logical variables, when calculating the mean of logical variables, TRUE is treated as 1 and FALSE is treated as 0. But we cannot calculate the mean of character variables and factor variables.
 
 ### Apply as.numeric function
-```{r conver variable types,results='hide'}
+```{r conver variable types,results='hide',warning=FALSE}
 num_logical = as.numeric(Vec_Logical)
 num_character = as.numeric(Vec_Character)
 num_factor = as.numeric(Vec_Factor)
